@@ -1,43 +1,86 @@
-# Datasheet Template
-
-As far as you can, complete the model datasheet. If you have got the data from the internet, you may not have all the information you need, but make sure you include all the information you do have. 
+# Dataset Datasheet
 
 ## Motivation
 
-- For what purpose was the dataset created? 
-- Who created the dataset (e.g., which team, research group) and on behalf of which entity (e.g., company, institution, organization)? Who funded the creation of the dataset?
+**Purpose:**  
+The dataset was created to support the development of predictive models that recommend the most suitable crops to grow based on soil and climate conditions. As it is not linked to any specific organization or farmer, its primary purpose is educational. On Kaggle, it is widely used for learning and experimentation.
 
- 
+**Data Creator:**  
+The dataset was created by Atharva Ingle, a Data Scientist and Kaggle Competition Expert.
+
+**Other Comments:**  
+According to the author, the dataset was built by augmenting multiple sources of rainfall, climate, and fertilizer data from India.
+
+--
+
 ## Composition
 
-- What do the instances that comprise the dataset represent (e.g., documents, photos, people, countries)? 
-- How many instances of each type are there? 
-- Is there any missing data?
-- Does the dataset contain data that might be considered confidential (e.g., data that is protected by legal privilege or by    doctor–patient confidentiality, data that includes the content of individuals’ non-public communications)?
+**Data Composition:**  
+- Tabular dataset with 7 numerical features and 1 categorical target (crop label).
+- Features: Nitrogen (N), Phosphorus (P), Potassium (K), Temperature (°C), Humidity (%), pH, Rainfall (mm).
+- Target: Crop name (22 unique classes).
+- Each row represents a set of environmental conditions and the corresponding suitable crop.
+- No missing values, duplicates, or outliers identified.
+- Dataset is clean, complete, and exhibits meaningful feature-label correlations.
+- No predefined train/test splits.
 
-## Collection process
+**Confidentiality:**  
+No personal, sensitive, or confidential information is included.
 
-- How was the data acquired? 
-- If the data is a sample of a larger subset, what was the sampling strategy? 
-- Over what time frame was the data collected?
+---
 
-## Preprocessing/cleaning/labelling
+## Collection Process
 
-- Was any preprocessing/cleaning/labeling of the data done (e.g., discretization or bucketing, tokenization, part-of-speech tagging, SIFT feature extraction, removal of instances, processing of missing values)? If so, please provide a description. If not, you may skip the remaining questions in this section. 
-- Was the “raw” data saved in addition to the preprocessed/cleaned/labeled data (e.g., to support unanticipated future uses)? 
- 
+Limited information is available. The dataset was compiled by aggregating data from various Indian sources related to rainfall, climate, and fertilizer usage. However, details such as data collection timeframe, specific regions, or institutions involved are not disclosed. This limits generalizability, especially for applications beyond the Indian context.
+
+---
+
+## Preprocessing / Cleaning / Labeling
+
+- The dataset required minimal cleaning due to its quality.
+- Preprocessing steps applied:
+  1. **Feature scaling** (normalization or standardization).
+  2. **Label encoding** (to convert categorical crop names into model-compatible values).
+- These transformations were applied during modeling and were not saved as a separate dataset.
+
+---
+
 ## Uses
 
-- What other tasks could the dataset be used for? 
-- Is there anything about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses? For example, is there anything that a dataset consumer might need to know to avoid uses that could result in unfair treatment of individuals or groups (e.g., stereotyping, quality of service issues) or other risks or harms (e.g., legal risks, financial harms)? If so, please provide a description. Is there anything a dataset consumer could do to mitigate these risks or harms? 
-- Are there tasks for which the dataset should not be used? If so, please provide a description.
+**Other Potential Uses:**  
+- Fertilizer recommendation  
+- Irrigation planning  
+- Agro-climatic zone clustering  
+- Precision agriculture education and experimentation  
+
+**Considerations and Risks:**  
+- The data reflects *Indian agro-climatic conditions* and may not generalize to other geographies.
+- It assumes access to *soil and weather sensors*, which may not be available to all farmers.
+- It omits economic, cultural, and practical factors affecting real-world crop choices.
+  
+To avoid misuse:
+- Validate models on local data before deployment elsewhere.
+- Use model outputs to *support*, not replace, expert agronomic advice.
+- Avoid integrating into policy or subsidy programs without fairness checks.
+
+**Unsuitable Uses:**  
+- Policy or subsidy decisions without broader context.  
+- Market forecasting, land classification, or crop pricing tasks.  
+- Health, safety, or toxicity assessments.
+
+---
 
 ## Distribution
 
-- How has the dataset already been distributed? 
-- Is it subject to any copyright or other intellectual property (IP) license, and/or under applicable terms of use (ToU)?  
+**Status:**  
+The dataset is publicly available on [Kaggle](https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset/data) and is commonly used for research and educational purposes.
+
+**License:**  
+Released under the *Apache 2.0 License*, allowing use, modification, and distribution — including commercial use — with proper attribution.
+
+---
 
 ## Maintenance
 
-- Who maintains the dataset?
-
+**Maintainer:**  
+The dataset is maintained by its original contributor on Kaggle. There is no formal update schedule or versioning process. Project-specific adaptations are the responsibility of the individual user.
