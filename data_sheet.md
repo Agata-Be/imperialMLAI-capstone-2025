@@ -11,7 +11,7 @@ The dataset was created by Atharva Ingle, a Data Scientist and Kaggle Competitio
 **Other Comments:**  
 According to the author, the dataset was built by augmenting multiple sources of rainfall, climate, and fertilizer data from India.
 
---
+---
 
 ## Composition
 
