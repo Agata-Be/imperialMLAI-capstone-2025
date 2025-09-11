@@ -1,6 +1,6 @@
 .venv*
-#data/*
 output/*
+!output/.gitkeep
 data/.DS_Store
 
 # Byte-compiled / optimized / DLL files
