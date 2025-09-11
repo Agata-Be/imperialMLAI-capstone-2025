@@ -13,7 +13,7 @@ We used the [Crop Recommendation Dataset](https://www.kaggle.com/datasets/atharv
 
 
 ## Model
-We evaluated multiple algorithms: Decision Tree, Gradient Boosting, XGBoost, Logistic Regression, and AdaBoost. **Random Forest** was selected as the primary model due to its superior accuracy (*99.5%*) and stability across folds.  **Logistic Regression** was considered as a simpler, more interpretable alternative, while AdaBoost underperformed.
+We evaluated multiple algorithms: Decision Tree, Gradient Boosting, XGBoost, Logistic Regression, and AdaBoost. **Random Forest** was selected as the primary model due to its superior accuracy (*99.6%*) and stability across folds.  **Logistic Regression** was considered as a simpler, more interpretable alternative, while AdaBoost underperformed.
 
 ## Hyperparameter Optimisation
 We tuned the models using *cross-validated search*:  
@@ -25,9 +25,11 @@ We tuned the models using *cross-validated search*:
 AdaBoost was not tuned further due to weak baseline results. We used *StratifiedKFold cross-validation* with accuracy and F1-score as evaluation metrics.
 
 ## Results
-- **Random Forest**: 99.5% accuracy (±0.002) – best performance, highly stable  
-- **Logistic Regression**: 96.1% accuracy (±0.003), more interpretable  
-- **AdaBoost**: 79.1% accuracy, not suitable for deployment  
+- **Random Forest**: 99.6% accuracy after (hyperparameters tuning) – best performance, highly stable  
+- **Logistic Regression**: 97.6% accuracy (after hyperparameters tuning), more interpretable  
+- **AdaBoost**: 24.0% accuracy (baseline model), not suitable for deployment  
 The results indicate that the model can recommend crops with very high reliability within the dataset’s scope.
+
+> ***Note:** The dataset appears highly separable, and results may overestimate real-world performance. Additional evaluation on noisier, real-world data is recommended before deployment.*
 
 **Permutation Importance analysis** shows that *humidity and rainfall* are the strongest predictors, followed by *potassium* and *nitrogen*.**Temperature and pH* contribute very little, likely due to limited variability in the dataset. This indicates that *water management and soil nutrients* are the most critical factors when choosing crops.
